@@ -7,7 +7,7 @@ var cod = require('./dist').CountDown;
 // Tiempo en segundos en formato d/h/m/s
 console.log(lib(-1));
 
-const contar = new co(8);
+const contar = new co(3, false);
 const descontar = new cod(4);
 
 // Contador

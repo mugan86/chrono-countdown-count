@@ -78,6 +78,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clockFormat">clockFormat</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -108,12 +122,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(limitValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>constructor(limitValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, clockFormat: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">lib/counter.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">lib/counter.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -129,6 +143,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -143,6 +158,24 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>clockFormat</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>output format. Return with clock format or no</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -153,6 +186,52 @@
         </table>
 </section>
 
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clockFormat"></a>
+                        <span class="name">
+                            <b>
+                            clockFormat
+                            </b>
+                            <a href="#clockFormat"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>clockFormat:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">lib/counter.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Determine if show with clock format (HH:MM:SS or <days>d <hours>h <minutes>m <seconds>s)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
 
             <section>
     
@@ -181,7 +260,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">lib/counter.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">lib/counter.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -236,11 +315,17 @@ export class Counter {
      */
     value: number &#x3D; -1;
     /**
+     * Determine if show with clock format (HH:MM:SS or &lt;days&gt;d &lt;hours&gt;h &lt;minutes&gt;m &lt;seconds&gt;s)
+     */
+    clockFormat: boolean;
+    /**
      * Contruct count up and asign finish limit max value to start count
      * @param startValue Asign value to set limit value and ok to start count time
+     * @param clockFormat output format. Return with clock format or no
      */
-    constructor(limitValue: number) {
+    constructor(limitValue: number, clockFormat: boolean &#x3D; true) {
         this.value &#x3D; limitValue;
+        this.clockFormat &#x3D; clockFormat;
     }
     /**
      * Time seconds counter until asign limit. Increment time values by second
@@ -256,7 +341,7 @@ export class Counter {
     start() {
         return interval(1000).pipe(
             map((x: number) &#x3D;&gt; {
-                return secondsInTimeFormat(x, 1, this.value);
+                return secondsInTimeFormat(x, 1, this.value, this.clockFormat);
             })
         );
     }
