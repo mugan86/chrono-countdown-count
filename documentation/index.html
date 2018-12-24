@@ -31,6 +31,7 @@
                    <div class="content-data">
 
 <h1 id="counter-countdowntimer-library">Counter / CountdownTimer Library</h1>
+<p><a href="https://badge.fury.io/js/mugan86-chronometer"><img src="https://badge.fury.io/js/mugan86-chronometer.svg" alt="npm version" class="img-responsive"></a></p>
 <p>This library use to execute count timer and countdown timer.</p>
 <h2 id="instructions-to-install">Instructions to install</h2>
 <div><pre class="line-numbers"><code class="language-javascript">npm install mugan86-chronometer</code></pre></div><h2 id="intructions-to-use">Intructions to use</h2>
@@ -39,7 +40,7 @@
 const count = chrono.Counter;
 
 // With clock format
-const contar = new co(3, true);
+const contar = new count(3, true);
 
 // Contador
 let counter = contar.start().subscribe(data =&gt; {
@@ -56,7 +57,7 @@ let counter = contar.start().subscribe(data =&gt; {
 FINISH
 
 // With NOT clock format
-const contar = new co(3, false);
+const contar = new count(3, false);
 
 // Contador
 let counter = contar.start().subscribe(data =&gt; {
@@ -75,10 +76,10 @@ FINISH</code></pre></div><h3 id="intructions-to-use-countdown-timer">Intructions
 const count = chrono.CountDown;
 
 // With clock format
-const contar = new co(3, true);
+const descontar = new count(3, true);
 
-// Contador
-let counter = contar.start().subscribe(data =&gt; {
+// Countdown timer
+let counter = descontar.start().subscribe(data =&gt; {
     console.log(data);
     if (data === &#39;FINISH&#39;) {
         counter.unsubscribe();
@@ -92,10 +93,10 @@ let counter = contar.start().subscribe(data =&gt; {
 FINISH
 
 // With NOT clock format
-const contarNoClock = new co(3, false);
+const descontarNoClock = new count(3, false);
 
-// Contador
-let counter = contarNoClock.start().subscribe(data =&gt; {
+// Counter
+let counter = descontarNoClock.start().subscribe(data =&gt; {
     console.log(data);
     if (data === &#39;FINISH&#39;) {
         counter.unsubscribe();

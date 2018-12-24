@@ -26,11 +26,7 @@ let discounter = descontar.start().subscribe(data => {
     }
 });
 
-// c();
 
-// Observable.interval(10000).takeWhile(() => true).subscribe(() => this.function());
-let contador = new c(10);
-contador.start();
 
 
 

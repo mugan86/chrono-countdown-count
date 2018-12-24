@@ -1,15 +1,24 @@
 {
   "name": "mugan86-chronometer",
   "version": "1.0.1",
-  "description": "",
+  "description": "Simple library that contait chronometer with Counter and Count Down Timer",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json"
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator --language es-ES"
   },
-  "keywords": [],
+  "keywords": [
+    "chrono",
+    "chronometer",
+    "cronometro",
+    "counter",
+    "contador",
+    "descontador",
+    "discounter",
+    "count down timer"
+  ],
   "author": "Anartz Mugika Ledo <mugan86@gmail.com>",
   "license": "MIT",
   "dependencies": {

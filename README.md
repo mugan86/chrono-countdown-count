@@ -1,5 +1,7 @@
 # Counter / CountdownTimer Library
 
+[![npm version](https://badge.fury.io/js/mugan86-chronometer.svg)](https://badge.fury.io/js/mugan86-chronometer)
+
 This library use to execute count timer and countdown timer.
 
 ## Instructions to install
@@ -17,7 +19,7 @@ const chrono = require('mugan86-chronometer');
 const count = chrono.Counter;
 
 // With clock format
-const contar = new co(3, true);
+const contar = new count(3, true);
 
 // Contador
 let counter = contar.start().subscribe(data => {
@@ -34,7 +36,7 @@ let counter = contar.start().subscribe(data => {
 FINISH
 
 // With NOT clock format
-const contar = new co(3, false);
+const contar = new count(3, false);
 
 // Contador
 let counter = contar.start().subscribe(data => {
@@ -58,10 +60,10 @@ const chrono = require('mugan86-chronometer');
 const count = chrono.CountDown;
 
 // With clock format
-const contar = new co(3, true);
+const descontar = new count(3, true);
 
-// Contador
-let counter = contar.start().subscribe(data => {
+// Countdown timer
+let counter = descontar.start().subscribe(data => {
     console.log(data);
     if (data === 'FINISH') {
         counter.unsubscribe();
@@ -75,10 +77,10 @@ let counter = contar.start().subscribe(data => {
 FINISH
 
 // With NOT clock format
-const contarNoClock = new co(3, false);
+const descontarNoClock = new count(3, false);
 
-// Contador
-let counter = contarNoClock.start().subscribe(data => {
+// Counter
+let counter = descontarNoClock.start().subscribe(data => {
     console.log(data);
     if (data === 'FINISH') {
         counter.unsubscribe();
