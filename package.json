@@ -1,0 +1,21 @@
+{
+  "name": "chronoter-npm-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json"
+  },
+  "keywords": [],
+  "author": "Anartz Mugika Ledo <mugan86@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "^1.1.7"
+  }
+}
