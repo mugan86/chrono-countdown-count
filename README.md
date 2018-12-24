@@ -5,7 +5,7 @@ This library use to execute count timer and countdown timer.
 ## Instructions to install
 
 ```javascript
-npm install chrono-npm-course
+npm install mugan86-chronometer
 ```
 
 ## Intructions to use 
@@ -13,7 +13,7 @@ npm install chrono-npm-course
 ### Intructions to use Count Timer
 
 ```javascript
-const chrono = require('chrono-npm-course');
+const chrono = require('mugan86-chronometer');
 const count = chrono.Counter;
 
 // With clock format
@@ -54,7 +54,7 @@ FINISH
 ### Intructions to use Countdown Timer
 
 ```javascript
-const chrono = require('chrono-npm-course');
+const chrono = require('mugan86-chronometer');
 const count = chrono.CountDown;
 
 // With clock format
