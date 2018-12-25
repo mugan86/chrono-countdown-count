@@ -1,3 +1,4 @@
+import { Timer } from './constants';
 import { interval } from "rxjs/internal/observable/interval";
 import { secondsInTimeFormat } from "./converter";
 import { map } from "rxjs/internal/operators/map";
@@ -42,9 +43,8 @@ export class CountDown {
      * 00:00:02
      * FINISH
      */
-    start() {
-        console.log(this.value);
-        return interval(1000).pipe(
+    start(interval_: number = Timer.ONE_SECOND_IN_MS) {
+        return interval(interval_).pipe(
             map((x: number) => {
                 return secondsInTimeFormat( this.value - x , 2, 1, this.clockFormat);
             })

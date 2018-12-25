@@ -1,6 +1,7 @@
 import { interval } from 'rxjs/internal/observable/interval';
 import { map } from 'rxjs/internal/operators/map';
 import { secondsInTimeFormat } from './converter';
+import { Timer } from './constants';
 /**
  * Use to discount number, from specific time to 0.
  */
@@ -33,8 +34,8 @@ export class Counter {
      * FINISH
      * @param countLimit Count only to until asign limit
      */
-    start() {
-        return interval(1000).pipe(
+    start(interval_: number = Timer.ONE_SECOND_IN_MS) {
+        return interval(interval_).pipe(
             map((x: number) => {
                 return secondsInTimeFormat(x, 1, this.value, this.clockFormat);
             })
