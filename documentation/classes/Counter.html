@@ -127,7 +127,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">lib/counter.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">lib/counter.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -218,7 +218,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">lib/counter.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">lib/counter.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -253,14 +253,14 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>start()</code>
+<code>start(interval_: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">lib/counter.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">lib/counter.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -270,6 +270,36 @@
                             <div class="io-description"><p>Time seconds counter until asign limit. Increment time values by second</p>
 </div>
 
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>interval_</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>Timer.ONE_SECOND_IN_MS</code>
+                                                        </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                             <div>
                                     <b>Example :</b>
                                         <div>
@@ -306,6 +336,7 @@ FINISH</code></pre>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { interval } from &#x27;rxjs/internal/observable/interval&#x27;;
 import { map } from &#x27;rxjs/internal/operators/map&#x27;;
 import { secondsInTimeFormat } from &#x27;./converter&#x27;;
+import { Timer } from &#x27;./constants&#x27;;
 /**
  * Use to discount number, from specific time to 0.
  */
@@ -338,8 +369,8 @@ export class Counter {
      * FINISH
      * @param countLimit Count only to until asign limit
      */
-    start() {
-        return interval(1000).pipe(
+    start(interval_: number &#x3D; Timer.ONE_SECOND_IN_MS) {
+        return interval(interval_).pipe(
             map((x: number) &#x3D;&gt; {
                 return secondsInTimeFormat(x, 1, this.value, this.clockFormat);
             })
