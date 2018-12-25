@@ -7,7 +7,7 @@
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator --language es-ES"
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator -w -o -s"
   },
   "keywords": [
     "chrono",
