@@ -25,7 +25,7 @@ export function secondsInTimeFormat(timeInSeconds: number, type: number, limit: 
         return days+'d - ' + hours + ':' + minutes + ':' + seconds;
     }
     return days + 'd ' + hours + 'h '
-        + minutes + 'm ' + seconds + 's ';
+        + minutes + 'm ' + seconds + 's';
 }
 
 /**

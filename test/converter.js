@@ -49,7 +49,7 @@ describe('Check if conversion from seconds to time format is correct', () => {
         let position = 0;
         secondsValues.map(
             secondsValue => {
-                expect(secondsToTime(secondsValue, 1, secondsValue + 10, false).trim()).to.equal(expectValues[position]);
+                expect(secondsToTime(secondsValue, 1, secondsValue + 10, false)).to.equal(expectValues[position]);
                 position ++;
             }
         );

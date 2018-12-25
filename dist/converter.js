@@ -26,7 +26,7 @@ function secondsInTimeFormat(timeInSeconds, type, limit = 0, clockFormat = false
         return days + 'd - ' + hours + ':' + minutes + ':' + seconds;
     }
     return days + 'd ' + hours + 'h '
-        + minutes + 'm ' + seconds + 's ';
+        + minutes + 'm ' + seconds + 's';
 }
 exports.secondsInTimeFormat = secondsInTimeFormat;
 /**
