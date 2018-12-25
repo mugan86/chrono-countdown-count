@@ -4,6 +4,13 @@ const secondsToTime = lib.secondsInTimeFormat;
 
 const expect = require('chai').expect;
 
+function checkValueLengthTwoOrThree(valueLength) {
+    if (valueLength === 2 || valueLength === 3) {
+        return true;
+    }
+    return false;
+}
+
 describe('Check if conversion from seconds to time format is correct', () => {
     it('Convert "x" sg in format clock and correct output', () => {
         const secondsValues = [ 345, 23, 34, 61, 60, 90, 900, 1200, 3600, 4200, 7230, 56, undefined, null, -10];
@@ -69,11 +76,13 @@ describe('Check if conversion from seconds to time format is correct', () => {
             value => expect(value).to.length(2)
         );
     });
-    xit('Convert 345sg in format clock', () => {
-        const timeFormat = secondsToTime(null, 1, 100 + 10, true);
-        console.log(timeFormat);
+    it('Check output contain d h m s elements with separate with " "', () => {
+        const secondsValue = 1234;
+        const timeFormat = secondsToTime(secondsValue, 1, secondsValue + 10, false);
+        const timeFormatElements = timeFormat.split(' ');
+        expect(timeFormatElements.length).to.equal(4);
+        timeFormatElements.map(
+            value => expect(checkValueLengthTwoOrThree(value.length)).to.true
+        );
     });
-    /**
-     * 
-     */
 });
