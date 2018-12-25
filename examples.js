@@ -1,11 +1,12 @@
-var lib = require('./dist').secondsInTimeFormat;
-var c = require('./dist/countdown').CountDown;
-var t = require('./dist').ProgressCountdown;
-var co = require('./dist').Counter;
-var cod = require('./dist').CountDown;
+var lib = require('./dist')
+
+const convertSeconds = lib.secondsInTimeFormat;
+var co = lib.Counter;
+var cod = lib.CountDown;
 
 // Tiempo en segundos en formato d/h/m/s
-console.log(lib(-1));
+console.log(convertSeconds(-1)); // FINISH
+console.log(convertSeconds(400, 1)); // 00:06:40
 
 const contar = new co(3, false);
 const descontar = new cod(4);

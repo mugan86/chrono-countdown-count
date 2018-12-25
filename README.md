@@ -1,7 +1,7 @@
 # Counter / CountdownTimer Library
 
 [![npm version](https://badge.fury.io/js/mugan86-chronometer.svg)](https://badge.fury.io/js/mugan86-chronometer)
-[![npm version](./documentation/images/coverage-badge-documentation.svg)](https://badge.fury.io/js/mugan86-chronometer)
+[![doc coverage](./documentation/images/coverage-badge-documentation.svg)](./documentation)
 
 This library use to execute count timer and countdown timer.
 
