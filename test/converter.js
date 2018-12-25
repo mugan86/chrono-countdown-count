@@ -6,7 +6,7 @@ const expect = require('chai').expect;
 
 describe('Check if conversion from seconds to time format is correct', () => {
     it('Convert "x" sg in format clock and correct output', () => {
-        const secondsValues = [ 345, 23, 34, 61, 60, 90, 900, 1200, 3600, 4200, 7230, 56];
+        const secondsValues = [ 345, 23, 34, 61, 60, 90, 900, 1200, 3600, 4200, 7230, 56, undefined, null, -10];
         const expectValues = [
             '00:05:45',
             '00:00:23',
@@ -19,7 +19,10 @@ describe('Check if conversion from seconds to time format is correct', () => {
             '01:00:00',
             '01:10:00',
             '02:00:30',
-            '00:00:56'
+            '00:00:56',
+            'FINISH',
+            'FINISH',
+            'FINISH'
         ]
         let position = 0;
         secondsValues.map(
@@ -31,7 +34,7 @@ describe('Check if conversion from seconds to time format is correct', () => {
 
     });
     it('Convert "x" sg in normal format and correct output', () => {
-        const secondsValues = [ 345, 23, 34, 61, 60, 90, 900, 1200, 3600, 4200, 7230, 56];
+        const secondsValues = [ 345, 23, 34, 61, 60, 90, 900, 1200, 3600, 4200, 7230, 56, undefined, null, -10];
         const expectValues = [
             '0d 0h 5m 45s',
             '0d 0h 0m 23s',
@@ -44,7 +47,10 @@ describe('Check if conversion from seconds to time format is correct', () => {
             '0d 1h 0m 0s',
             '0d 1h 10m 0s',
             '0d 2h 0m 30s',
-            '0d 0h 0m 56s'
+            '0d 0h 0m 56s',
+            'FINISH',
+            'FINISH',
+            'FINISH'
         ]
         let position = 0;
         secondsValues.map(
@@ -64,7 +70,8 @@ describe('Check if conversion from seconds to time format is correct', () => {
         );
     });
     xit('Convert 345sg in format clock', () => {
-
+        const timeFormat = secondsToTime(null, 1, 100 + 10, true);
+        console.log(timeFormat);
     });
     /**
      * 

@@ -9,7 +9,7 @@ const constants_1 = require("./constants");
  * @param clockFormat Determine if return format take clock or d/h/m/s
  */
 function secondsInTimeFormat(timeInSeconds, type, limit = 0, clockFormat = false) {
-    if (timeInSeconds < 0 || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
+    if (timeInSeconds < 0 || timeInSeconds === undefined || timeInSeconds === null || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
         return 'FINISH';
     }
     const days = Math.floor(timeInSeconds / (constants_1.Timer.ONE_DAY_SECONDS));

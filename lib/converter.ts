@@ -8,7 +8,7 @@ import { Timer } from "./constants";
  * @param clockFormat Determine if return format take clock or d/h/m/s
  */
 export function secondsInTimeFormat(timeInSeconds: number, type: number, limit: number = 0, clockFormat: boolean = false) {
-    if (timeInSeconds < 0 || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
+    if (timeInSeconds < 0 || timeInSeconds === undefined || timeInSeconds === null || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
         return 'FINISH';
     }
     const days = Math.floor(timeInSeconds / (Timer.ONE_DAY_SECONDS));
