@@ -27,5 +27,5 @@ export declare class Counter {
      * FINISH
      * @param countLimit Count only to until asign limit
      */
-    start(interval_?: number): import("../../../../../../../../Volumes/DATA/Udemy/Proyects/NPM Course/nodets/chronometer/node_modules/rxjs/internal/Observable").Observable<string>;
+    start(interval_?: number): import("rxjs/internal/Observable").Observable<string>;
 }

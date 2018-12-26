@@ -9,7 +9,7 @@ const constants_1 = require("./constants");
  * @param clockFormat Determine if return format take clock or d/h/m/s
  */
 function secondsInTimeFormat(timeInSeconds, type, limit = 0, clockFormat = false) {
-    if (timeInSeconds < 0 || timeInSeconds === undefined || timeInSeconds === null || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
+    if (checkTimerFinish(timeInSeconds, type, limit)) {
         return 'FINISH';
     }
     const days = Math.floor(timeInSeconds / (constants_1.Timer.ONE_DAY_SECONDS));
@@ -23,7 +23,8 @@ function secondsInTimeFormat(timeInSeconds, type, limit = 0, clockFormat = false
                 + ':' + numberFormatClock(minutes)
                 + ':' + numberFormatClock(seconds);
         }
-        return days + 'd - ' + hours + ':' + minutes + ':' + seconds;
+        return days + 'd - ' + numberFormatClock(hours)
+            + ':' + numberFormatClock(minutes) + ':' + numberFormatClock(seconds);
     }
     return days + 'd ' + hours + 'h '
         + minutes + 'm ' + seconds + 's';
@@ -35,4 +36,17 @@ exports.secondsInTimeFormat = secondsInTimeFormat;
  */
 function numberFormatClock(n) {
     return (n < 10) ? '0'.concat(n.toString()) : n;
+}
+/**
+ * Check if counter (count or discount) arrive to finish
+ * @param timeInSeconds time in number format to specify total seconds in this moment
+ * @param type counter type - 1: Counter Up / 2: Counter Down
+ * @param limit Finish number
+ */
+function checkTimerFinish(timeInSeconds, type, limit) {
+    if (timeInSeconds < 0 || timeInSeconds === undefined || timeInSeconds === null
+        || type === 1 && timeInSeconds === limit || type === 2 && timeInSeconds === 0) {
+        return true;
+    }
+    return false;
 }
