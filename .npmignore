@@ -3,3 +3,9 @@ coverage/
 .firebase/
 .firebaserc
 firebase.json
+test/
+lib/
+firebase-publish-ok.js
+.travis.yml
+tsconfig.doc.json
+tsconfig.json
