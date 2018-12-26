@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/mugan86-chronometer.svg)](https://badge.fury.io/js/mugan86-chronometer)
 [![Build Status](https://travis-ci.org/mugan86/chrono-countdown-count.svg?branch=master)](https://travis-ci.org/mugan86/chrono-countdown-count)
+[![Coverage Status](https://coveralls.io/repos/github/mugan86/chrono-countdown-count/badge.svg?branch=master)](https://coveralls.io/github/mugan86/chrono-countdown-count?branch=master)
 [![doc coverage](https://raw.githubusercontent.com/mugan86/chrono-countdown-count/master/documentation/images/coverage-badge-documentation.svg?sanitize=true)](./documentation)
 
 This library use to execute count timer and countdown timer.
