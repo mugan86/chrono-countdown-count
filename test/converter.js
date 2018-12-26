@@ -1,11 +1,15 @@
 const lib = require('./../dist');
 
 const secondsToTime = lib.secondsInTimeFormat;
+const constants = lib.Timer;
 
 const expect = require('chai').expect;
 
-function checkValueLengthTwoOrThree(valueLength) {
-    if (valueLength === 2 || valueLength === 3) {
+function checkValueLength(valueLength, dataType) {
+    if (valueLength === 2 || valueLength === 3 && dataType !== 'd') {
+        return true;
+    }
+    if (dataType === 'd' && valueLength >= 2) {
         return true;
     }
     return false;
@@ -76,13 +80,39 @@ describe('Check if conversion from seconds to time format is correct', () => {
             value => expect(value).to.length(2)
         );
     });
+    it('Check output contain HH MM SS elements with separate with ":" and more than one day', () => {
+        const secondsValue = constants.MS_PER_DAY / 1000 + 120;
+        const timeFormat = secondsToTime(secondsValue, 1, secondsValue + 10, true);
+        console.log(timeFormat);
+        let timeFormatElements = [];
+        let moreThanDay = false;
+        timeFormatElements = timeFormat.split(':');
+        // One day or more
+        if ( timeFormat.indexOf('-') > 1) {
+            moreThanDay = true;
+            timeFormatElements = [];
+            const elements = timeFormat.split(' - ');
+            const timeElements = elements[1].split(':');
+            timeFormatElements.push(elements[0]);
+            timeElements.map(value => timeFormatElements.push(value));
+        }
+        if (moreThanDay) {
+            expect(timeFormatElements.length).to.equal(4);
+        } else {
+            expect(timeFormatElements.length).to.equal(3);
+        }
+        timeFormatElements.map(
+            value => expect(checkValueLength(value.length, value.substring(value.length -1))).to.true
+        );
+        
+    });
     it('Check output contain d h m s elements with separate with " "', () => {
-        const secondsValue = 1234;
+        const secondsValue = 100000000;
         const timeFormat = secondsToTime(secondsValue, 1, secondsValue + 10, false);
         const timeFormatElements = timeFormat.split(' ');
         expect(timeFormatElements.length).to.equal(4);
         timeFormatElements.map(
-            value => expect(checkValueLengthTwoOrThree(value.length)).to.true
+            value => expect(checkValueLength(value.length, value.substring(value.length -1))).to.true
         );
     });
 });
