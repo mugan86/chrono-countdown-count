@@ -1,6 +1,6 @@
 {
   "name": "mugan86-chronometer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple library that contait chronometer with Counter and Count Down Timer",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,7 +12,6 @@
     "test": "mocha",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec",
     "doc-publish": "npm run create-doc && firebase deploy"
-
   },
   "keywords": [
     "chrono",
