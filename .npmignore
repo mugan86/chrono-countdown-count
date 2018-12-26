@@ -1,2 +1,5 @@
 documentation/
 coverage/
+.firebase/
+.firebaserc
+firebase.json
