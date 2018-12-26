@@ -8,8 +8,11 @@
     "watch": "tsc -w",
     "build": "tsc",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator -w -o -s",
+    "create-doc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator",
     "test": "mocha",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec"
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec",
+    "doc-publish": "npm run create-doc && firebase deploy"
+
   },
   "keywords": [
     "chrono",
