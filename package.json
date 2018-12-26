@@ -11,7 +11,12 @@
     "create-doc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator",
     "test": "mocha",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec",
-    "doc-publish": "npm run create-doc && firebase deploy"
+    "doc-publish": "npm run create-doc && firebase deploy",
+    "publish": "npm publish && npm run doc-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mugan86/chrono-countdown-count.git"
   },
   "keywords": [
     "chrono",
@@ -25,6 +30,10 @@
   ],
   "author": "Anartz Mugika Ledo <mugan86@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mugan86/chrono-countdown-count/issues"
+  },
+  "homepage": "https://github.com/mugan86/chrono-countdown-count#readme",
   "dependencies": {
     "rxjs": "^6.3.3"
   },
