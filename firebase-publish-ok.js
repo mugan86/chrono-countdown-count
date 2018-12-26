@@ -1,0 +1,1 @@
+console.log('😀😀😀 \x1b[32m Documentation to Chronometer successfully publish!! \x1b[0m😀😀😀');

@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "postdeploy":"node firebase-publish-ok.js",
     "public": "documentation",
     "ignore": [
       "firebase.json",
