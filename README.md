@@ -7,6 +7,9 @@
 
 This library use to execute count timer and countdown timer.
 
+* Documentation Info: https://mugan86-chronometer.firebaseapp.com/
+* NPM Package: https://www.npmjs.com/package/mugan86-chronometer
+
 ## Instructions to install
 
 ```javascript
@@ -96,5 +99,3 @@ let counter = descontarNoClock.start().subscribe(data => {
 0d 0h 0m 1s
 FINISH
 ```
-Documentation Info: https://mugan86-chronometer.firebaseapp.com/
-NPM Package: https://www.npmjs.com/package/mugan86-chronometer
