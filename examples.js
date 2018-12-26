@@ -1,4 +1,4 @@
-var lib = require('./dist')
+var lib = require('./../dist')
 
 const convertSeconds = lib.secondsInTimeFormat;
 var co = lib.Counter;
@@ -24,6 +24,13 @@ let discounter = descontar.start().subscribe(data => {
     console.log('Desc', data);
     if (data === 'FINISH') {
         discounter.unsubscribe();
+    }
+});
+
+let counter_ = count.start(10).subscribe(data => {
+    console.log(data, '----->');
+    if (data === 'FINISH') {
+        counter_.unsubscribe();
     }
 });
 
