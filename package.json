@@ -1,6 +1,6 @@
 {
   "name": "mugan86-chronometer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple library that contait chronometer with Counter and Count Down Timer",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
