@@ -8,6 +8,16 @@
 
 This library use to execute count timer and countdown timer.
 
+## More details about use this project
+Project that provides us with the functionalities of using an accountant or discounter that may be valid for games applications in which it requires to have a time control in an ascending or descending manner.
+### Examples that use this library:
+* https://mugan86.github.io/strangle-game-angular-widget/
+### We could use it in applications / games like:
+* Question and answer games of type Trivia in which we need to control the time per question and the total.
+* In Test / Surveys of limited time.
+* And much more.
+
+## Interest links
 * Documentation Info: https://mugan86-chronometer.firebaseapp.com/
 * NPM Package: https://www.npmjs.com/package/mugan86-chronometer
 
@@ -100,3 +110,7 @@ let counter = descontarNoClock.start().subscribe(data => {
 0d 0h 0m 1s
 FINISH
 ```
+## Examples that use this library
+
+Strangle App Game in Angular: https://mugan86.github.io/strangle-game-angular-widget/
+
